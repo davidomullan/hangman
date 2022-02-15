@@ -1,9 +1,9 @@
 #This Python Program runs a game of hangman.
 
-#Load English Dictionary
+#Used to load english dictionary
 import json
 
-#Select Random Word
+#Used to select random word
 import random
 
 def print_gallow():
@@ -69,6 +69,7 @@ def print_left_leg():
           "      |\n",
           "=========''', '''")
 
+#Print schene based on number of wrong guesses
 def print_scene(wrong_letters):
     if wrong_letters == 0:
         print_gallow()
@@ -85,7 +86,7 @@ def print_scene(wrong_letters):
     else:
         print_left_leg()
 
-#Return next guess, return char
+#Ask for next guess, return char
 def ask_new_letter():
     while True:
         letter = input("Guess a letter: ")
@@ -107,6 +108,7 @@ def check_guesses(correct_chars, wrong_chars, letter):
     else:
         return False
 
+#Print correct guesses in correct positions, return list of chars
 def print_current(random_word, correct_chars):
     current = []
     for i in random_word:
