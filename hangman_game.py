@@ -131,8 +131,9 @@ print(random_word)
 correct_chars = []
 wrong_chars = []
 
+print_scene(len(wrong_chars))
+
 while len(wrong_chars) < 6:
-    print_scene(len(wrong_chars))
     letter = ask_new_letter()
     if check_guesses(correct_chars, wrong_chars, letter):
         print("Letter already guessed!")
@@ -155,5 +156,8 @@ while len(wrong_chars) < 6:
         print("Incorrect Letters: ", wrong_chars)
         current = print_current(random_word, correct_chars)
         print("\n")
+
+    print_scene(len(wrong_chars))
+
 
 print("The word was", random_word)
